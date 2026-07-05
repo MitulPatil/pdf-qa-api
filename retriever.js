@@ -8,6 +8,7 @@ export async function retrieveChunks(question, documentId, topK = 3) {
 
     const result = await pool.query(
         `SELECT
+            id,
             chunk_index,
             content,
             start_page,
@@ -22,10 +23,10 @@ export async function retrieveChunks(question, documentId, topK = 3) {
     );
 
     return result.rows.map(row => ({
-        chunkId: row.id,           // ← new: database row ID for chunk lookup
+        chunkId: row.id,
         chunkIndex: row.chunk_index,
         content: row.content,
-        startPage: row.start_page,     // ← page metadata for citations
+        startPage: row.start_page,
         endPage: row.end_page,
         wordCount: row.word_count,
         similarity: parseFloat(row.similarity)

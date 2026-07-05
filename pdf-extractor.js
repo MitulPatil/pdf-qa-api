@@ -19,7 +19,7 @@ export async function safeExtractPdf(filepath) {
         return {
             success : false,
             error : `Cannot read file: ${error.message}`,
-            hint : "Check file permision"
+            hint : "Check file permission"
         }
     }
 

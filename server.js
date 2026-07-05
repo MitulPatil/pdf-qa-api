@@ -148,7 +148,7 @@ app.get("/documents", async (req, res) => {
   }
 });
 
-app.get("chunks/:id", async (req,res) => {
+app.get("/chunks/:id", async (req,res) => {
     const chunkId = parseInt(req.params.id);
 
     // parseInt converts the URL parameter string to a number

@@ -55,7 +55,7 @@ export async function chunkText(text, chunkSize = 150, overlap = 30, minChunkWor
     return chunks;
 }
 
-export async function validateChunks(chunks, expectedDimentions = 3072) {
+export async function validateChunks(chunks, expectedDimensions = 3072) {
     const issues = [];
 
     chunks.forEach((chunk, i) => {
